@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ブログ編集</title>
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <header>
+        <div class="pc-inner">
+            <div class="pc-logo">
+                <a href=""><img th:src="@{/images/logo.png}" alt=""></a>
+            </div>
+            <ul class="pc-list">
+                <li class="pc-list__item" th:text="${adminName}"></li>
+                <li class="pc-list__item"><a th:href="@{/blog/list}">ブログ一覧</a></li>
+                <li class="pc-list__item"><a th:href="@{/admin/logout}">ログアウト</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="main-inner">
+            <section class="register-section">
+                <h2>ブログ編集画面</h2>
+                <form th:action="@{/blog/edit/process}" method="post" enctype="multipart/form-data">
+                    <div class="register-section-details">
+                        <div class="register-section-details_flex">
+                            <div>タイトル</div>
+                            <input type="text" name="blogTitle" th:value="${blogs.blogName}">
+                        </div>
+                        <div class="register-section-details_flex">
+                            <div>カテゴリー</div>
+                            <select name="blogCategory">
+                                <option value=""></option>
+                                <option value="技術" th:selected="${blogs.blogCategory} == '技術'">技術
+                                </option>
+                                <option value="生活" th:selected="${blogs.blogCategory} == '生活'">生活
+                                </option>
+                                <option value="旅行" th:selected="${blogs.blogCategory} == '旅行'">旅行</option>
+                            </select>
+                        </div>
+                        <div class="register-section-details_flex">
+                            <div>正文</div>
+                            <textarea name="blogContent" placeholder="正文"
+                            th:text=${blogs.blogContent}></textarea>
+                        </div>
+                        <div class="register-section-details_flex">
+                            <div>ブログ画像</div>
+                            <input type="file" name="blogImage">
+                        </div>
+                        
+
+                    </div>
+                    <div class="register-section-details_flex">
+                        <input type="hidden" name="blogId" th:value="${blogs.blogId}">
+                        <button class="register">更新</button>
+                        <button class="back-btn" onclick="history.back();" type="button">戻る</button>
+                    </div>
+                </form>
+                <form th:action="@{/blog/delete}" method="post">
+                    <div class="register-section-details_flex">
+                        <input type="hidden" name="blogId" th:value="${blogs.blogId}">
+                        <button class="register">削除</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <small>Copyright &copy; Wang Chuankai</small>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./js/common.js"></script>
+</body>
+
+</html>
