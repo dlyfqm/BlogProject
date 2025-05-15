@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ブログ編集</title>
-    <link rel="stylesheet" th:href="@{/css/reset.css}">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="blog_edit.css">
 </head>
 
 <body>
     <header>
         <div class="pc-inner">
             <div class="pc-logo">
-                <a href=""><img th:src="@{/images/logo.png}" alt=""></a>
+                <a href=""><img src="images/logo.png" alt=""></a>
             </div>
             <ul class="pc-list">
                 <li class="pc-list__item" th:text="${adminName}"></li>
@@ -59,21 +58,27 @@
                     <div class="register-section-details_flex">
                         <input type="hidden" name="blogId" th:value="${blogs.blogId}">
                         <button class="register">更新</button>
-                        <button class="back-btn" onclick="history.back();" type="button">戻る</button>
+                        <button class="register" formaction="@{/blog/delete}" formmethod="post">削除</button>
+                        <button class="back-btn" onclick="history.back();" type="button">戻る</button>                        
                     </div>
+                    <!-- <div class="register-section-details_flex">
+                        <input type="hidden" name="blogId" th:value="${blogs.blogId}">
+                        <button class="register">更新</button>
+                        <button class="back-btn" onclick="history.back();" type="button">戻る</button>
+                    </div> -->
                 </form>
-                <form th:action="@{/blog/delete}" method="post">
+                <!-- <form th:action="@{/blog/delete}" method="post">
                     <div class="register-section-details_flex">
                         <input type="hidden" name="blogId" th:value="${blogs.blogId}">
                         <button class="register">削除</button>
                     </div>
-                </form>
+                </form> -->
             </section>
         </div>
     </main>
     <footer>
         <div>
-            <small>Copyright &copy; Wang Chuankai</small>
+            <p>Copyright 2025 <small>&copy;Wang Chuankai</small></p>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"

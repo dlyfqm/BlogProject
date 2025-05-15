@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ブログ一覧</title>
-    <link rel="stylesheet" th:href="@{/css/reset.css}">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>ブログ登録</title>
+    <link rel="stylesheet" href="blog_register.css">
 </head>
 
 <body>
     <header>
         <div class="pc-inner">
             <div class="pc-logo">
-                <a href=""><img th:src="@{/images/logo.png}" alt=""></a>
+                <a href=""><img src="images/logo.png" alt=""></a>
             </div>
             <ul class="pc-list">
                 <li class="pc-list__item" th:text="${adminName}"></li>
@@ -31,7 +30,7 @@
                     <div class="register-section-details">
                         <div class="register-section-details_flex">
                             <div>タイトル</div>
-                            <input type="text" name="blogTitle" value="" id="adminName">
+                            <input type="text" name="blogTitle" value="" id="title">
                         </div>
                         <div class="register-section-details_flex">
                             <div>カテゴリー</div>
@@ -62,9 +61,7 @@
         </div>
     </main>
     <footer>
-        <div>
-            <small>Copyright &copy; Wang Chuankai</small>
-        </div>
+        <p>Copyright 2025 <small>&copy;Wang Chuankai</small></p>        
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
