@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録</title>
+    <link rel="stylesheet" th:href="@{/css/account_register.css}">
+</head>
+
+<body>
+    <section class="form-contents">
+        <form class="register-form" th:action="@{/admin/register/process}" method="post">
+            <h2>新規登録</h2>
+            <div class="control-group">
+                <label class="register-field-icon" for="register-username">ユーザー名</label>
+                <input type="text" class="register-field" placeholder="ユーザー名" id="register-username" name="accountName" required>
+            </div>
+            <div class="control-group">
+                <label class="register-field-icon" for="register-password">パスワード</label>
+                <input type="password" class="register-field" placeholder="パスワード" id="register-password" name="password" required>
+            </div>
+            <div class="control-group">
+                <label class="register-field-icon" for="register-email">メールアドレス</label>
+                <input type="text" class="register-field" placeholder="メールアドレス" id="register-email" name="mailAddress" required>
+            </div>
+            <div class="control-group control-position">
+                <button class="btn">登録</button>
+            </div>
+            <div class="control-group control-position">
+                <a class="register-link" th:href="@{/login}">ログイン画面へ</a>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>Copyright 2025 <small>&copy;Wang Chuankai</small></p>
+    </footer>
+</body>
+
+</html>
