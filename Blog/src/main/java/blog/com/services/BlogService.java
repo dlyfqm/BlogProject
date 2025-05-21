@@ -13,7 +13,7 @@ public class BlogService {
 	@Autowired
 	private BlogDao blogDao;
 
-	// 商品一覧のチェック
+	// ブログ一覧のチェック
 	// もしaccountId==null 戻り値としてnull
 	// findAll内容をコントローラークラスに渡す
 	public List<Blog> selectAllBlogList(Long accountId) {
@@ -24,7 +24,7 @@ public class BlogService {
 		}
 	}
 	
-	//商品の登録処理チェック
+	//ブログの登録処理チェック
 	//もし、findByBlogTitleが==nullだったら、
 	//保存処理
 	//true
@@ -45,9 +45,9 @@ public class BlogService {
 	}
 	
 	//編集画面を表示するときのチェック
-	//もし、productId == null　null
+	//もし、blogId == null　null
 	//そうでない場合、
-	//findByProductIdの情報をコントローラークラスに渡す
+	//findByBlogIdの情報をコントローラークラスに渡す
 	public Blog blogEditCheck(Long blogId) {
 		if(blogId == null) {
 			return null;
@@ -58,11 +58,11 @@ public class BlogService {
 
 	//更新処理のチェックの
 	
-	//もし、productId==nullだったら、更新処理はしない
+	//もし、blogId==nullだったら、更新処理はしない
 	//false
 	//そうでない場合、
 	//更新処理をする
-	//コントローラークラスからもらった、productIdを使って、編集する前の、データを取得
+	//コントローラークラスからもらった、blogIdを使って、編集する前の、データを取得
 	//変更するべきところだけ、セッターを使用してデータの更新をする。
 	//trueを返す
 	public boolean blogUpdate(Long blogId,
@@ -86,10 +86,10 @@ public class BlogService {
 	}
 	
 	//削除処理のチェック
-	//もし、コントローラーからもらったproductIdがnullであれば
+	//もし、コントローラーからもらったblogIdがnullであれば
 	//削除できないこと false
 	//そうでない場合
-	//deleteByProductIdを使用して商品の削除
+	//deleteByBlogIdを使用してブログの削除
 	//true
 	public boolean deleteBlog(Long blogId) {
 		if(blogId == null) {

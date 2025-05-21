@@ -12,7 +12,7 @@ public interface AccountDao extends JpaRepository<Account, Long> {
 	Account save(Account account);
 
 	// SELECT * FROM WHERE mail_address = ?
-	// 用途:管理者の登録処理をするときに、同じメールアドレスがあったらば登録させないようにする
+	// 用途:ユーザーの登録処理をするときに、同じメールアドレスがあったらば登録させないようにする
 	// 1行だけしかレコードは取得できない
 	Account findByMailAddress(String mailAddress);
 

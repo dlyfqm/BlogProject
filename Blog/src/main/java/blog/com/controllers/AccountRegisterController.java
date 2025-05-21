@@ -15,18 +15,18 @@ public class AccountRegisterController {
 	private AccountService accountService;
 
 	// 登録画面の表示
-	@GetMapping("/admin/register")
+	@GetMapping("/account/register")
 	public String getAccountRegisterPage() {
 		return "account_register.html";
 	}
 	
 	//登録処理
-	@PostMapping("/admin/register/process")
+	@PostMapping("/account/register/process")
 	public String accountRegisterProcess(@RequestParam String accountName,
 			@RequestParam String mailAddress,
 			@RequestParam String password) {
-		//もし、createAdminがtrue admin_login.htmlに遷移
-		//そうでない場合、admin_register.htmlにとどまります。
+		//もし、createAccountがtrue account_login.htmlに遷移
+		//そうでない場合、account_register.htmlにとどまります。
 		if(accountService.createAccount(mailAddress, accountName, password)) {
 			return "account_login.html";
 		}else {

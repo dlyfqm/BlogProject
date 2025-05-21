@@ -1,0 +1,181 @@
+:root {
+    --max-width: 1400px;
+    --padding: 20px;
+    --border-radius: 5px;
+    --primary-color: #007bff;
+    --secondary-color: #3498DB;
+}
+
+/* ヘッダースタイル */
+.pc-inner, main {
+    max-width: var(--max-width);
+    padding: 0 var(--padding);
+    margin: 0 auto;
+}
+
+.pc-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pc-logo img {
+    height: 100px;
+}
+
+.pc-list {
+    display: flex;
+    list-style: none;
+    padding-top: 20px;
+    margin: 0;
+}
+
+.pc-list__item {
+    margin-left: 20px;
+}
+
+.pc-list__item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.pc-list__item a:hover {
+    color: var(--primary-color);
+}
+
+/* メインコンテンツスタイル */
+article {
+    border-radius: var(--border-radius);
+}
+
+h2 {
+    color: #333;
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+.register-item {
+    color: #333;
+    margin: 20px 0 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+.register-section-details {
+    color: #333;
+    margin: 20px 0 20px;    
+}
+
+.register-section {
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+}
+
+.register-section-details_flex {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.register-section-details_flex > div:first-child {
+    width: 120px;
+    font-weight: normal;
+}
+
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 200px;
+    resize: vertical;
+}
+
+.register-section-details_flex:last-child {
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* ボタンスタイル */
+button, .register {
+    padding: 5px 0;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: 16px;
+    margin: auto;
+}
+
+.register {
+    width: 150px;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* ブログリストスタイル */
+.blogs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 20px 0 20px;
+    margin: 0;
+}
+
+.blogs li {
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.blogs li, article {
+    border-radius: var(--border-radius);
+    background-color: #fff;
+}
+
+.blogs a, .pc-list__item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.blogs a {
+    display: block;
+}
+
+.blogs img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.blogs p {
+    padding: 0 15px 15px;
+    margin: 10px 0 0;
+}
+
+/* フッタースタイル */
+footer {
+    text-align: center;
+    padding: 25px;    
+}
+
+/* footer p {
+    margin: 0;
+}
+
+footer small {
+    font-size: 0.8em;
+    opacity: 0.8;
+} */

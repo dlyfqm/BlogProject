@@ -12,14 +12,14 @@ import jakarta.transaction.Transactional;
 @Transactional
 public interface BlogDao extends JpaRepository<Blog, Long> {
     //保存処理と更新処理 insertとupdate
-	Blog save(Blog products);
+	Blog save(Blog blog);
 	
 	//SELECT * FROM blog
-	//用途:商品の一覧を表示させるときに使用
+	//用途:ブログの一覧を表示させるときに使用
 	List<Blog>findAll();
 	
 	//SELECT * FROM blog WHERE blog_title = ?
-	//用途:商品の登録チェックに使用(同じ商品名が登録されないようにするチェックに使用)
+	//用途:ブログの登録チェックに使用(同じブログタイトルが登録されないようにするチェックに使用)
 	Blog findByBlogTitle(String blogTitle);
 	
 	//SELECT * FROM blog WHERE blog_id = ?

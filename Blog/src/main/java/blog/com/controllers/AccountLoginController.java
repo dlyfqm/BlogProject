@@ -20,19 +20,19 @@ public class AccountLoginController {
 	private HttpSession session;
 	
 	//ログイン画面の表示
-	@GetMapping("/admin/login")
+	@GetMapping("/account/login")
 	public String getAccountLoginPage() {
 		return "account_login.html";
 	}
 	
 	//ログイン処理
-	@PostMapping("/admin/login/process")
+	@PostMapping("/account/login/process")
 	public String accountLoginProcess(@RequestParam String mailAddress, @RequestParam String password) {
 		//loginCheckメソッドを呼び出してその結果をaccountという変数に格納
 		Account account = accountService.loginCheck(mailAddress, password);
 		//もし、account==nullログイン画面にとどまります。
 		//そうでない場合は、sessionにログイン情報に保存
-		//商品一覧画面にリダイレクトする/blog/list
+		//ブログ一覧画面にリダイレクトする/blog/list
 		
 		if(account == null) {
 			return "account_login.html";

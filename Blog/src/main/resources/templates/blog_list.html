@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ブログ一覧</title>
+	<link rel="stylesheet" th:href="@{/css/blog_list.css}">
+</head>
+
+<body>
+	<header>
+		<div class="pc-inner">
+			<div class="pc-logo">
+				<a href=""><img th:src="@{/images/logo.png}" alt=""></a>
+			</div>
+			<ul class="pc-list">
+				<li class="pc-list__item" th:text="${accountName}"></li>
+				<li class="pc-list__item"><a href="">ブログ一覧</a></li>
+				<li class="pc-list__item"><a th:href="@{/account/logout}">ログアウト</a></li>
+			</ul>
+		</div>
+	</header>
+	<main>
+		<article>
+			<h2>ブログ一覧</h2>
+			<section class="register-item">
+				<div class="all-view-register__button">
+					<a th:href="@{/blog/register}" class="register-link">
+						<button class="register">ブログ登録</button>
+					</a>
+				</div>
+			</section>
+			<ul class="blogs">
+				<li th:each="blog:${blogList}">
+					<a th:href="@{/blog/edit/{blogId}(blogId=${blog.blogId})}">
+						<img th:src="@{/blog-img/{imagePath}(imagePath=${blog.blogImage})}" alt="">
+						<p th:text="${blog.blogTitle}"></p><br>
+						<p th:text="${blog.categoryName}"></p>
+					</a>
+				</li>
+			</ul>
+
+		</article>
+
+	</main>
+	<footer>
+		<div>
+			<p>Copyright 2025 <small>&copy;Wang Chuankai</small></p>
+		</div>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="./js/common.js"></script>
+</body>
+
+</html>
