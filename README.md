@@ -3,10 +3,10 @@
 開発環境：
 | 項目      | 内容                     |
 | ------- | ---------------------- |
-| フレームワーク | Spring Boot        |
-| 言語      | Java                |
+| フレームワーク | Spring Boot 3.4.5       |
+| 言語      | Java 17               |
 | ビルドツール  | Maven                  |
-| データベース  | PostgreSQL              |
+| データベース  | PostgreSQL 17             |
 | IDE     | SpringToolSuite4 / VSCode |
 | バージョン管理 | Git + GitHub           |
 
