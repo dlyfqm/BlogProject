@@ -27,7 +27,7 @@ public class AccountRegisterController {
 			@RequestParam String password) {
 		//もし、createAccountがtrue account_login.htmlに遷移
 		//そうでない場合、account_register.htmlにとどまります。
-		if(accountService.createAccount(mailAddress, accountName, password)) {
+		if(accountService.createAccount(accountName, mailAddress, password)) {
 			return "account_login.html";
 		}else {
 			return "account_register.html";
