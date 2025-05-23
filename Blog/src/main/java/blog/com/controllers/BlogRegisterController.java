@@ -71,7 +71,7 @@ public class BlogRegisterController {
 			String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date())+blogImage.getOriginalFilename();
 			
 			//ファイルの保存作業
-			try {
+			try {				
 				Files.copy(blogImage.getInputStream(), Path.of("src/main/resources/static/blog-img/"+fileName));
 			} catch (IOException e) {
 				e.printStackTrace();

@@ -15,8 +15,7 @@ public class AccountService {
 	//もし、findBymailAddress==nullだったら登録処理をします。
 	//saveメソッドを使用して登録処理をする
 	//保存ができたらtrue
-	//そうでない場合、保存処理失敗 false
-	
+	//そうでない場合、保存処理失敗 false	
 	public boolean createAccount(String accountName, String mailAddress, String password) {
 		if(accountDao.findByMailAddress(mailAddress)==null) {
 			accountDao.save(new Account(accountName,mailAddress,password));
@@ -29,8 +28,7 @@ public class AccountService {
 	//ログイン処理
 	//もし、mailAddressとpasswordがfindByMailAddressAndPasswordを使用して存在しなかった場合==nullの場合、
 	//その場合は、存在しないnullであることをコントローラークラスに知らせる
-	//そうでない場合ログインしている人の情報をコントローラークラスに渡す
-	
+	//そうでない場合ログインしている人の情報をコントローラークラスに渡す	
 	public Account loginCheck(String mailAddress, String password) {
 		Account account = accountDao.findByMailAddressAndPassword(mailAddress, password);
 		if(account == null) {

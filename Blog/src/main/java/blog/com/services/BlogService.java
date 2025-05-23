@@ -20,7 +20,7 @@ public class BlogService {
 		if (accountId == null) {
 			return null;
 		} else {
-			return blogDao.findAll();
+			return blogDao.findByAccountId(accountId);
 		}
 	}
 	

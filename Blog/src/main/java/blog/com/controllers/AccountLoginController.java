@@ -32,8 +32,7 @@ public class AccountLoginController {
 		Account account = accountService.loginCheck(mailAddress, password);
 		//もし、account==nullログイン画面にとどまります。
 		//そうでない場合は、sessionにログイン情報に保存
-		//ブログ一覧画面にリダイレクトする/blog/list
-		
+		//ブログ一覧画面にリダイレクトする/blog/list		
 		if(account == null) {
 			return "account_login.html";
 		}else {
